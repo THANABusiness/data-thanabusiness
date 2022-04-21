@@ -46,9 +46,11 @@ const AppHead = () => (
 
 const EntryItem = ({ entry }) => (
   <div className="flex flex-col space-y-2">
-    <div className="prose dark:prose-dark w-full">{entry.message}</div>
+    <div className="prose dark:prose-dark w-full">{entry.firtName}</div>
     <div className="flex items-center space-x-3">
-      <p className="text-sm text-gray-500">{entry.name}</p>
+      <p className="text-sm text-gray-500">{entry.lastName}</p>
+      <span className="text-gray-200 dark:text-gray-800">/</span>
+        <p className="text-sm text-gray-500">{entry.address}</p>
       <span className="text-gray-200 dark:text-gray-800">/</span>
       <p className="text-sm text-gray-400 dark:text-gray-600">
         {formatDate(new Date(entry.createdAt), "d MMM yyyy 'at' h:mm bb")}
