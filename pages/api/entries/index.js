@@ -10,11 +10,12 @@ export default async function handler(req, res) {
 
     POST: async () => {
       const {
-        body: { name, message },
+        body: { firstName, lastName, address },
       } = req
       const created = await createGuestbookEntry({
-        name,
-        message,
+        firstName,
+        lastName,
+        address,
         createdAt: new Date(),
       })
 
@@ -26,5 +27,6 @@ export default async function handler(req, res) {
     return res.status(405).end()
   }
 
-  await handlers[req.method]()
+  await handlers[req.method]() {
+    alert('Success')
 }
